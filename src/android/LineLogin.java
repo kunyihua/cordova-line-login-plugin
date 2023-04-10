@@ -99,12 +99,8 @@ public class LineLogin extends CordovaPlugin {
         if (channelId.length() == 0) {
             this.parameterError("channel_id is required.");
         } else {
-			try {
-				LineApiClientBuilder apiClientBuilder = new LineApiClientBuilder(this.cordova.getActivity().getApplicationContext(), channelId);
-				lineApiClient = apiClientBuilder.build();
-			} catch (Exception e) {
-				this.UnknownError("channel_id is loaded");
-			}
+			LineApiClientBuilder apiClientBuilder = new LineApiClientBuilder(this.cordova.getActivity().getApplicationContext(), channelId);
+			lineApiClient = apiClientBuilder.build();
         }
     }
 

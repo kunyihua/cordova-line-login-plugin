@@ -17,14 +17,9 @@ import LineSDK
             return
         }
         
-		do {
-			LoginManager.shared.setup(channelID: channelID, universalLinkURL: nil)
-			let result = CDVPluginResult(status: CDVCommandStatus_OK)
-			commandDelegate.send(result, callbackId:command.callbackId)
-		} catch {
-		self.parameterError(command: command, description: "channel_id is loaded")
-            return
-		}
+		LoginManager.shared.setup(channelID: channelID, universalLinkURL: nil)
+		let result = CDVPluginResult(status: CDVCommandStatus_OK)
+		commandDelegate.send(result, callbackId:command.callbackId)
     }
     
     func _login(_ command: CDVInvokedUrlCommand, options: LoginManagerOptions) {
